@@ -26,6 +26,10 @@
         a {
             color: white;
         }
+        .cc{
+            width: 500px;
+            height: 500px;
+        }
     </style>
 </head>
 
@@ -53,63 +57,6 @@
             </div>
         </div>
     </nav>
-    <script>
-        function startDrag(e) {
-            // determine event object
-            if (!e) {
-                var e = window.event;
-            }
-
-            // IE uses srcElement, others use target
-            var targ = e.target ? e.target : e.srcElement;
-
-            if (targ.className != 'dragme') {
-                return
-            };
-            // calculate event X, Y coordinates
-            offsetX = e.clientX;
-            offsetY = e.clientY;
-
-            // assign default values for top and left properties
-            if (!targ.style.left) {
-                targ.style.left = '0px'
-            };
-            if (!targ.style.top) {
-                targ.style.top = '0px'
-            };
-
-            // calculate integer values for top and left 
-            // properties
-            coordX = parseInt(targ.style.left);
-            coordY = parseInt(targ.style.top);
-            drag = true;
-
-            // move div element
-            document.onmousemove = dragDiv;
-        }
-
-        function dragDiv(e) {
-            if (!drag) {
-                return
-            };
-            if (!e) {
-                var e = window.event
-            };
-            var targ = e.target ? e.target : e.srcElement;
-            // move div element
-            targ.style.left = coordX + e.clientX - offsetX + 'px';
-            targ.style.top = coordY + e.clientY - offsetY + 'px';
-            return false;
-        }
-
-        function stopDrag() {
-            drag = false;
-        }
-        window.onload = function() {
-            document.onmousedown = startDrag;
-            document.onmouseup = stopDrag;
-        }
-    </script>
     <div id="draggable" class="dragme"><b><h4>กิจกรรมปีใหม่2566</h4></b>
         <video width="400px" height="350px" controls>
           <source src="https://drive.google.com/uc?export=download&id=1d6n1IT_7Wk9SNu4DObkOso7XA8Rjnxpa" type="video/mp4">
@@ -118,6 +65,13 @@
             <p>รูปภาพ</p>
         </a>
         <p>28 ธันวาคม 2565</p>
+    </div>
+     <div id="draggable" class="dragme"><b><h4>ก้าวผ่านม.1 เริ่มต้นม.2 ไปด้วยกัน</h4></b>
+        <img id="cc" scr=""https://drive.google.com/file/d/14LnwPNyvrcWxqCi1b-9_20NmRSGwES4y/view?usp=sharing>
+        <a href="https://drive.google.com/drive/folders/1srqMWJTrHzWXeM0L1FhbKKXFIsFRqttK?usp=sharing" target="_blank" rel="noopener noreferrer">
+            <p>รูปภาพ</p>
+        </a>
+        <p>9 มีนาคม 2566</p>
     </div>
 
 </body>
